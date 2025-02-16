@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HAM no.34 m.3/10</title>
+    <style>
+
+        body {
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+            background-image: url(1.jpg); 
+            background-size: cover;
+            background-position: center;
+            transition: background-image 1s ease-in-out;
+        }
+
+      
+        .next-btn {
+            position: absolute;
+            bottom: 20px;
+            left: 48%;
+            transform: translateX(-20%);
+            padding: 10px 20px;
+            font-size: 100px;
+            background-color: rgb(255, 255, 255);
+            color: rgb(255, 7, 7);
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+
+        .next-btn:hover {
+            background-color: rgba(255, 255, 255, 0.8);
+        }
+    </style>
+</head>
+<body>
+    <button class="next-btn" onclick="changeBackground()">Next</button>
+
+    <script>
+        let currentImage = 1;
+        const images = ['4.jpg', '1.jpg', '3.jpg', '2.jpg']; 
+
+        function changeBackground() {
+            currentImage = (currentImage + 1) % images.length; 
+            document.body.style.backgroundImage = `url('${images[currentImage]}')`;
+        }
+    </script>
+</body>
+</html>
